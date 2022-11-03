@@ -11,6 +11,7 @@
 
 let numeriCasuali = [];
 let numerIpotesi = [];
+let numeriCorretti= [];
 
 
 for (let i = 1; i <= 5; i++) {
@@ -40,11 +41,22 @@ function appear(){
 
     for (let i = 1; i <= 5; i++) {
 
-        let numeriUtente = parseInt(prompt('inserisci i numeri'));
-        numerIpotesi.push(numeriUtente);
+        let numeroUtente = parseInt(prompt('inserisci i numeri'));
+        numerIpotesi.push(numeroUtente);
         console.log(numerIpotesi)
 
-    }    
+        if (numeriCasuali.includes(numeroUtente)){
+
+            numeriCorretti.push(numeroUtente);
+
+        }
+    }  
+    
+    document.getElementById('risultato').innerHTML= "I numeri correti sono: " + numeriCorretti;
+    document.getElementById('risultato2').innerHTML= "Totale numeri corretti: " + numeriCorretti.length;
+
+    console.log(numeriCorretti);
+    console.log(numeriCorretti.length);
 
 }
 
